@@ -9,7 +9,6 @@ void main() {
 /// Height function to calculate height of a given tree
 int height(Node? root) {
   if (root == null) return 0;
-  if (root.leftChild == null && root.rightChild == null) return 1;
   return 1 + max(height(root.leftChild), height(root.rightChild));
 }
 
