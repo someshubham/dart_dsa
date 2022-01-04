@@ -1,10 +1,5 @@
 import 'dart:math';
 
-void main() {
-  Node root = createTree();
-
-  print(height(root));
-}
 
 /// Height function to calculate height of a given tree
 int height(Node? root) {
@@ -34,4 +29,9 @@ Node createTree() {
   root.leftChild!.leftChild = Node(data: 4);
   /// The height of the tree here would be 3
   return root;
+}
+
+void main() {
+  Node root = createTree();
+  print(height(root));
 }

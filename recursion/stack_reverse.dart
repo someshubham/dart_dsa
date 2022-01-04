@@ -1,10 +1,3 @@
-void main() {
-  List<int> stack = [5, 6, 1, 7];
-
-  print("Original Stack: $stack");
-  print("Reversed Stack: ${reverse(stack)}");
-}
-
 /// This function is used to return a reversed stack
 List<T> reverse<T extends num>(List<T> stack) {
   if (stack.isEmpty) {
@@ -25,4 +18,11 @@ List<T> insertAtLast<T extends num>(List<T> stack, T value) {
   List<T> newStack = insertAtLast(stack, value);
   newStack.add(top);
   return newStack;
+}
+
+void main() {
+  List<int> stack = [5, 6, 1, 7];
+
+  print("Original Stack: $stack");
+  print("Reversed Stack: ${reverse(stack)}");
 }

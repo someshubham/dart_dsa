@@ -1,7 +1,3 @@
-void main() {
-  print(sortStack([2,3,1]));
-}
-
 List<T> sortStack<T extends num>(List<T> stack) {
   if (stack.isEmpty) {
     return stack;
@@ -26,4 +22,8 @@ List<T> insert<T extends num>(List<T> stack, T value) {
   var newStack = insert(stack, value);
   newStack.add(top);
   return newStack;
+}
+
+void main() {
+  print(sortStack([2, 3, 1]));
 }
