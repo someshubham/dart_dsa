@@ -13,21 +13,12 @@ void letterCasePermutation(String input, String output) {
   /// No need to process anything
   if (isNumeric(currentInput)) {
     letterCasePermutation(input.substring(1), output + currentInput);
-    return;
-  }
-
-  /// If the letter is Upper case then lower case it
-  /// and visa versa
-  if (isUpperCase(currentInput)) {
+  } else {
     letterCasePermutation(
         input.substring(1), output + currentInput.toLowerCase());
-  } else {
     letterCasePermutation(
         input.substring(1), output + currentInput.toUpperCase());
   }
-
-  /// Don't change the case of the letter
-  letterCasePermutation(input.substring(1), output + currentInput);
 }
 
 void main() {
@@ -36,8 +27,4 @@ void main() {
 
 bool isNumeric(String input) {
   return double.tryParse(input) != null;
-}
-
-bool isUpperCase(String input) {
-  return input == input.toUpperCase();
 }
