@@ -8,18 +8,9 @@ void balancedParenthesis(int open, int close, String output) {
     return;
   }
 
-  if (open == 0) {
-    balancedParenthesis(open, close - 1, output + ")");
-    return;
-  }
+  if (open != 0) balancedParenthesis(open - 1, close, output + "(");
 
-  if (open == close) {
-    balancedParenthesis(open - 1, close, output + "(");
-    return;
-  }
-
-  balancedParenthesis(open - 1, close, output + "(");
-  balancedParenthesis(open, close - 1, output + ")");
+  if (close > open) balancedParenthesis(open, close - 1, output + ")");
 }
 
 void main() {
